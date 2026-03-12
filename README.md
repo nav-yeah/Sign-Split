@@ -1,5 +1,6 @@
 # SignSplit – Dual-Path ASL Recognition Framework with motion-based routing between specialized static and temporal models.
 
+This project is inspired by the Google Isolated Sign Language Recognition Kaggle competition.
 A real-time **American Sign Language (ASL) recognition system** that classifies **250 isolated signs** using MediaPipe hand landmarks and deep learning models.  
 The system separates **static and dynamic gestures** using a motion-based routing mechanism and maintains a **lightweight model footprint (<25 MB)** for efficient deployment.
 
@@ -144,6 +145,45 @@ The dataset was created to support **PopSign**, an educational game designed to 
 
 ---
 
+## Unsuccessful Approaches / Early Experiments
+
+During early experimentation, we explored a multi-tier architecture designed to balance spatial feature extraction, temporal modeling, and efficient attention mechanisms. While conceptually promising, the approach proved computationally expensive and difficult to train effectively under our resource constraints.
+
+### Proposed Architecture
+
+**Tier 1 — Spatial Feature Extraction**
+
+- A lightweight convolutional backbone such as **MobileNet (~4MB)** was considered instead of heavier architectures like **ResNet (~45MB)**.
+- The goal was to extract spatial representations efficiently while keeping the model deployable on resource-constrained systems.
+
+**Tier 2 — Temporal Modeling**
+
+- A **GRU-based sequence model** was explored instead of a bidirectional LSTM.
+- GRUs were preferred due to their reduced gating structure and lower computational overhead.
+- Experiments focused on shallow architectures (1–2 layers) to maintain efficiency.
+
+**Tier 3 — Attention / Reasoning Layer**
+
+- A **Flash Attention–based distillation layer** was proposed to transfer knowledge from higher model layers to a more efficient attention module.
+- The motivation was to reduce the quadratic complexity of standard attention (**O(N²)**).
+- Flash Attention theoretically offers improved memory efficiency and near-linear scaling, although it introduces its own implementation constraints.
+- Both standard attention and Flash Attention variants were considered for comparison.
+
+**Tier 4 — Model Optimization**
+
+- Post-training optimization techniques such as **model quantization** were investigated to reduce inference latency and memory footprint.
+- Additional deployment optimizations (e.g., **ONNX conversion**) were also considered.
+
+### Challenges Encountered
+
+- The architecture introduced significant **training complexity** relative to the dataset size and available compute.
+- Training required a **large number of epochs** for meaningful convergence.
+- Experiments showed **slow accuracy improvements and long per-epoch training times**.
+
+As a result, this approach was not pursued further in the final implementation, and the project shifted toward simpler architectures that allowed faster experimentation and more stable training.
+
+---
+
 ## Future Improvements
 
 - CNN-based **image models for static gestures**
@@ -151,6 +191,16 @@ The dataset was created to support **PopSign**, an educational game designed to 
 - Multi-modal fusion (**hand + face landmarks**)
 - Dataset expansion with varied lighting conditions
 - Sentence-level **continuous sign recognition**
+
+---
+
+## Literature References
+
+https://arxiv.org/abs/1503.02531 - Knowledge distillation 
+https://arxiv.org/abs/1602.07360 - Squeezenet
+https://arxiv.org/abs/1704.04861 - Mobilenet V2 
+https://arxiv.org/abs/1712.05877 - Quantization training of neural networks
+https://arxiv.org/abs/2211.11701 - Perceiver-style architecture 
 
 ---
 

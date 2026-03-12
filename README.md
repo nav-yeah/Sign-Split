@@ -196,11 +196,11 @@ As a result, this approach was not pursued further in the final implementation, 
 
 ## Literature References
 
-https://arxiv.org/abs/1503.02531 - Knowledge distillation 
-https://arxiv.org/abs/1602.07360 - Squeezenet
-https://arxiv.org/abs/1704.04861 - Mobilenet V2 
-https://arxiv.org/abs/1712.05877 - Quantization training of neural networks
-https://arxiv.org/abs/2211.11701 - Perceiver-style architecture 
+-https://arxiv.org/abs/1503.02531 - Knowledge distillation 
+-https://arxiv.org/abs/1602.07360 - Squeezenet
+-https://arxiv.org/abs/1704.04861 - Mobilenet V2 
+-https://arxiv.org/abs/1712.05877 - Quantization training of neural networks
+-https://arxiv.org/abs/2211.11701 - Perceiver-style architecture 
 
 ---
 

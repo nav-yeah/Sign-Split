@@ -1,5 +1,6 @@
 # SignSplit – Dual-Path ASL Recognition Framework with motion-based routing between specialized static and temporal models.
 
+This project is inspired by the Google Isolated Sign Language Recognition Kaggle competition.
 A real-time **American Sign Language (ASL) recognition system** that classifies **250 isolated signs** using MediaPipe hand landmarks and deep learning models.  
 The system separates **static and dynamic gestures** using a motion-based routing mechanism and maintains a **lightweight model footprint (<25 MB)** for efficient deployment.
 

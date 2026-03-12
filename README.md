@@ -25,6 +25,20 @@ This section will include:
 - System architecture diagram  
 - Example prediction outputs with confidence scores  
 
+## Results (Static Sign Recognition)
+
+### Baseline Confusion Matrix
+
+<p align="center">
+  <img src="images/confusion_baseline.png" width="600">
+</p>
+
+### Final Model Performance
+
+<p align="center">
+  <img src="images/final_results.png" width="600">
+</p>
+
 ---
 
 ## Key Features
@@ -196,12 +210,23 @@ As a result, this approach was not pursued further in the final implementation, 
 
 ## Literature References
 
--https://arxiv.org/abs/1503.02531 - Knowledge distillation 
--https://arxiv.org/abs/1602.07360 - Squeezenet
--https://arxiv.org/abs/1704.04861 - Mobilenet V2 
--https://arxiv.org/abs/1712.05877 - Quantization training of neural networks
--https://arxiv.org/abs/2211.11701 - Perceiver-style architecture 
+The following research papers informed the design decisions and architectural experiments explored in this project:
 
+- **Knowledge Distillation**  
+  https://arxiv.org/abs/1503.02531
+
+- **SqueezeNet: AlexNet-level Accuracy with 50x Fewer Parameters**  
+  https://arxiv.org/abs/1602.07360
+
+- **MobileNetV2: Inverted Residuals and Linear Bottlenecks**  
+  https://arxiv.org/abs/1704.04861
+
+- **Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference**  
+  https://arxiv.org/abs/1712.05877
+
+- **Perceiver-style Architecture**  
+  https://arxiv.org/abs/2211.11701
+  
 ---
 
 ## Citation

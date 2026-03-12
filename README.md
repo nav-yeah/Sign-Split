@@ -41,6 +41,18 @@ This section will include:
 
 ---
 
+## Feature Space Visualization
+
+To understand how well the extracted features separate different sign classes, we projected the high-dimensional feature vectors into 2D using Principal Component Analysis (PCA).
+
+<p align="center">
+  <img src="images/pca_feature_projection.png" width="600">
+</p>
+
+The visualization shows clusters corresponding to different sign classes in the reduced feature space. While some overlap exists, the projection indicates that the learned representations capture meaningful structure in the dataset.
+
+---
+
 ## Key Features
 
 - Supports **250 ASL gestures**

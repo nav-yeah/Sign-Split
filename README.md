@@ -135,20 +135,26 @@ Temporal CNN with stacked 1D convolutions:
 
 ## Dataset
 
-This project uses the **Google Isolated Sign Language Recognition dataset** from Kaggle.
+This project uses the **Google - Isolated Sign Language Recognition Dataset** from Kaggle.
 
-Dataset characteristics:
+- **Source:** [Google - Isolated Sign Language Recognition – Kaggle](https://www.kaggle.com/competitions/asl-signs)
+- **Organized by:** Google & mlgesture team
+- **Type:** Kaggle Competition Dataset
+- **Format:** MediaPipe hand/pose/face landmark coordinates (`.parquet` files)
+- **Total Samples:** ~94,000 sequences
+- **Classes:** 250 isolated American Sign Language (ASL) signs
+- **Collected From:** Deaf signers to ensure authenticity
 
-- ~95,000 sign videos
-- 250 ASL sign vocabulary
-- 21 Deaf signers
-- Landmark features extracted using **MediaPipe Holistic**
-- Each frame contains **543 landmarks (x, y, z)**
+### Data Structure:
+- Landmarks extracted via **MediaPipe Holistic** (no raw video/images)
+- Features include `x`, `y`, `z` coordinates for:
+  -  Hand landmarks (left & right)
+  - Pose landmarks
+  - Face landmarks
 
-Dataset Source:  
-https://www.kaggle.com/competitions/asl-signs
-
-The dataset was created to support **PopSign**, an educational game designed to help parents of Deaf children learn ASL vocabulary.
+> **Note:** This dataset was released for the Kaggle competition and is intended  
+> for research and educational purposes only. See the  
+> [competition rules](https://www.kaggle.com/competitions/asl-signs/rules) for usage terms.
 
 ---
 

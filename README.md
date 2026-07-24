@@ -19,15 +19,6 @@ Static and dynamic gestures require different feature representations.
 To address this, SignSplit introduces a **dual-path architecture** that routes inputs to specialized models depending on motion patterns.
 
 ---
-<--!comment-->
-## Demo (Coming Soon)
-
-This section will include:
-
-- Real-time ASL recognition demo GIF  
-- System architecture diagram  
-- Example prediction outputs with confidence scores  
-<--!comment-->
 ## Results (Static Sign Recognition)
 
 ### Baseline Confusion Matrix
